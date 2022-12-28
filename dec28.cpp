@@ -37,3 +37,55 @@ public:
         
     }
 };
+
+
+//2nd question
+
+void MyQueue:: push(int x)
+{
+        // Your Code
+        
+        QueueNode *t=new QueueNode(x);
+
+if(t==NULL){
+    cout<<" queue is full "<<endl;
+}
+
+else{
+
+    // t->data=data;
+    // t->next=NULL;
+    if(front==NULL){front=rear=t;}
+    else{
+         rear->next=t;
+         rear=t;
+}
+ 
+}
+        
+ 
+
+
+}
+
+//Function to pop front element from the queue.
+int MyQueue :: pop()
+{
+        // Your Code
+        
+         int x=-1;
+    if(front==NULL){
+
+      
+
+    }else{
+      
+      QueueNode *p=front;
+      front=front->next;
+      x=p->data;
+      delete p;
+    }
+      return x;
+        
+        
+}
