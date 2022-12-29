@@ -330,10 +330,7 @@ class Solution
             quickSort(arr,low,j-1);
             quickSort(arr,j+1,high);
             
-        }
-        
-        
-        
+        }  
     }
     
     public:
