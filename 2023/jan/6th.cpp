@@ -46,8 +46,8 @@ public:
         //       count++;
         //   }
         //     return count;
-      
-      //optimize method
+
+        // optimize method
         if (arr[0] == 0 && n > 1)
             return -1;
         if (n == 1)
@@ -89,4 +89,112 @@ int main()
     return 0;
 }
 
+// } Driver Code Ends
+
+// second question reverse pair
+
+//{ Driver Code Starts
+// Initial Template for C++
+
+#include <bits/stdc++.h>
+#include <iostream>
+using namespace std;
+
+// } Driver Code Ends
+// User function Template for C++
+
+class Solution
+{
+
+private:
+    int count;
+
+    void checkCount(vector<int> &nums, int start, int mid, int end)
+    {
+
+        // two pointers;
+
+        int l = start, r = mid + 1;
+
+        while (l <= mid && r <= end)
+        {
+
+            if ((long)nums[l] > (long)2 * nums[r])
+            {
+
+                count += (mid - l + 1);
+
+                r++;
+            }
+            else
+            {
+
+                l++;
+            }
+        }
+
+        // worst case might be nlog(n)
+
+        sort(nums.begin() + start, nums.begin() + end + 1);
+        return;
+        // every step sort
+    }
+
+    void mergeSort(vector<int> &nums, int start, int end)
+    {
+
+        if (start == end)
+            return;
+
+        int mid = (start + end) / 2;
+
+        mergeSort(nums, start, mid);
+
+        mergeSort(nums, mid + 1, end);
+
+        checkCount(nums, start, mid, end);
+
+        return;
+    }
+
+public:
+    int countRevPairs(int n, vector<int> nums)
+    {
+
+        // Code here
+
+        if (!nums.size())
+            return 0;
+
+        count = 0;
+
+        mergeSort(nums, 0, nums.size() - 1);
+
+        return count;
+    }
+};
+
+//{ Driver Code Starts.
+int main()
+{
+    int t;
+    cin >> t;
+    while (t--)
+    {
+        int n;
+        cin >> n;
+        vector<int> arr;
+
+        for (int i = 0; i < n; ++i)
+        {
+            int x;
+            cin >> x;
+            arr.push_back(x);
+        }
+
+        Solution obj;
+        cout << obj.countRevPairs(n, arr) << endl;
+    }
+    return 0;
+}
 // } Driver Code Ends
