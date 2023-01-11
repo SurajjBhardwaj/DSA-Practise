@@ -14,15 +14,10 @@ class Solution{
 public:
     pair<int, int> get(int a, int b){
         //complete the function here
-        
         a=a xor b;
         b=a xor b;
         a= a xor b;
-        
-        return { a,b };
-        
-        
-        
+        return { a,b };  
     }
 };
 
@@ -62,33 +57,22 @@ using namespace std;
 
 class Solution {
   public:
-    
     int find(int n){
-        
         if(n%4==0){
             return n;
         }
-        
         if(n%4==1){
             return 1;
         }
-        
         if(n%4==2){
             return n+1;
         }
-        
         if(n%4==3){
             return 0;
-        }
-        
-        
+        }   
     }
-  
-  
     int findXOR(int l, int r) {
         // complete the function here
-        
-        
         return find(r) xor find(l-1);
         
         
@@ -110,4 +94,40 @@ int main() {
         cout << obj.findXOR(l, r) << endl;
     }
 }
+// } Driver Code Ends
+
+// 3rd question 
+// Odd or even
+
+//{ Driver Code Starts
+#include<bits/stdc++.h> 
+using namespace std; 
+
+// } Driver Code Ends
+class Solution{   
+public:
+    string oddEven(int N){
+        // code here  
+        if((N xor 1)<N){
+            return "odd";
+        }
+        else return "even";
+        
+    }
+};
+
+//{ Driver Code Starts.
+int main() 
+{ 
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        int N;
+        cin >> N;
+        Solution ob;
+        cout << ob.oddEven(N) << endl;
+    }
+    return 0; 
+} 
 // } Driver Code Ends
