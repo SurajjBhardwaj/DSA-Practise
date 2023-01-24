@@ -13,28 +13,28 @@ public:
 	    // code here
 	    
 	    //brute force method
-	   // int min=INT32_MAX;
-	   // int a[n];
+	   int min=INT32_MAX;
+	   int a[n];
 	    
 	   
-	   // for(int i=0;i<n;i++){
+	   for(int i=0;i<n;i++){
 	        
-	   //     if(arr[i]<min){
-	   //         min=arr[i];
-	   //     }
-	   //     a[i]=arr[i];
+	       if(arr[i]<min){
+	           min=arr[i];
+	       }
+	       a[i]=arr[i];
 	        
-	   // }
+	   }
 	    
-	   // sort(a,a+n);
-	   // int k=0;
+	   sort(a,a+n);
+	   int k=0;
 	    
-	   // for(int i=0;i<n;i++){
+	   for(int i=0;i<n;i++){
 	        
-	   //     auto itr=find(a, a+ n, arr[i]);
-	   //     arr[i]=distance(a,itr);
+	       auto itr=find(a, a+ n, arr[i]);
+	       arr[i]=distance(a,itr);
 	        
-	   // }
+	   }
 	   
 	  
 	    //optimized method
