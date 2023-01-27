@@ -1,7 +1,6 @@
 //{ Driver Code Starts
 #include <bits/stdc++.h>
 using namespace std;
-
 // } Driver Code Ends
 class Solution
 {
@@ -36,7 +35,6 @@ public:
         return dp[0];
     }
 };
-
 //{ Driver Code Starts.
 int main()
 {
