@@ -82,7 +82,8 @@ public:
         
         // else return -1;
         
-        
+        //optimized approach 
+        //find the length of both of the ll
          int len1=0;
          int len2=0;
          Node *node1 = head1;
@@ -100,6 +101,8 @@ public:
          node1=head1;
          node2=head2;
          int diff=0;
+
+         //traverse the node with the greter length by the difference between their length
          if(len1>len2){
              diff=len1-len2;
              for(int i=0;i<diff;i++){
@@ -112,6 +115,8 @@ public:
                  node2=node2->next;
              }
          }
+
+         //traverse from now to the end and check if they are equal then return the data of that node otherwise return -1
          while(node1!=NULL && node2!=NULL){
              if(node1==node2){
                  return node1->data;
